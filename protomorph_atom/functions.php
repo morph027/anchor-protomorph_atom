@@ -28,6 +28,12 @@ function count_words($str) {
 	return count(preg_split('/\s+/', strip_tags($str), null, PREG_SPLIT_NO_EMPTY));
 }
 
+function preview($content){
+	$paragraphs = explode("\n\n", $content);
+	$paragraphs = array_slice($paragraphs, 0, 2);
+	return join("\n\n", $paragraphs);
+}
+
 function pluralise($amount, $str, $alt = '') {
 	return intval($amount) === 1 ? $str : $str . ($alt !== '' ? $alt : 's');
 }

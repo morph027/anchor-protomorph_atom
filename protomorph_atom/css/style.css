@@ -16,13 +16,13 @@
 @viewport					{ width: device-width; }
 
 ::-moz-selection {
-	background: #12a3eb;
+	background: #363f48;
 	color: #ffffff;
 	text-shadow: none;
 }
 
 ::selection {
-	background: #12a3eb;
+	background: #363f48;
 	color: #ffffff;
 	text-shadow: none;
 }
@@ -71,19 +71,49 @@ textarea {
 }
 
 a {
-	color: #12a3eb;
-	text-decoration: none;
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transition: ease-in-out 0.1s;
+  -webkit-transition: ease-in-out 0.1s;
+  -moz-transition: ease-in-out 0.1s;
+  -o-transition: ease-in-out 0.1s;
+  color: #363f48;
+  position: relative;
 }
 
-a:hover,
-a:focus {
-	color: #0076b1;
-	text-decoration: underline;
+a:hover {
+  color: #363f48;
 }
 
-a:focus { outline: none; }
+a[rel="article"]:before {
+  position: absolute;
+  right: 10px;
+  content: "\2192";
+  color: transparent;
+  -webkit-transform: scaleX(0);
+  -moz-transform: scaleX(0);
+  -o-transform: scaleX(0);
+  transform: scaleX(0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transition: ease-in-out 0.1s;
+  -webkit-transition: ease-in-out 0.1s;
+  -moz-transition: ease-in-out 0.1s;
+  -o-transition: ease-in-out 0.1s;
+}
 
-figure { margin: 0; }
+a[rel="article"]:hover:before {
+  -webkit-transform: scaleX(1);
+  -moz-transform: scaleX(1);
+  -o-transform: scaleX(1);
+  transform: scaleX(1);
+  color: #363f48;
+  right: -20px;
+}
 
 img {
 	vertical-align: middle;
@@ -94,7 +124,7 @@ hr {
 	margin-top: 20px;
 	margin-bottom: 20px;
 	border: 0;
-	border-top: 2px solid #12a3eb;
+	border-top: 2px solid #363f48;
 }
 
 h1,
@@ -197,7 +227,7 @@ blockquote {
 	margin: 0 0 20px;
 	font-size: 16px;
 	background-color: #f3f3f3;
-	border-left: 5px solid #12a3eb;
+	border-left: 5px solid #363f48;
 }
 
 blockquote p:last-child,
@@ -449,7 +479,7 @@ textarea::-webkit-input-placeholder { color: #bbbbbb; }
 header.header {
 	position: relative;
 	padding: 20px 15px;
-	background-color: #12a3eb;
+	background-color: #363f48;
 	text-align: center;
 }
 
@@ -492,7 +522,7 @@ header.header #logo:hover { color: #ffffff; }
 	margin-top: 20px;
 	margin-bottom: 20px;
 	margin-left: 20px;
-	background-color: #12a3eb;
+	background-color: #363f48;
 	background-image: none;
 	border: 1px solid transparent;
 }
@@ -608,7 +638,7 @@ footer.footer small { display: block; }
 article.article {
 	padding-bottom: 20px;
 	margin-bottom: 20px;
-	border-bottom: 2px solid #12a3eb;
+	border-bottom: 2px solid #363f48;
 }
 
 article.article.error-page {
@@ -682,8 +712,8 @@ article.article > footer > span { display: block; }
 
 .pagination > li > a:hover,
 .pagination > li > a:active {
-	border-color: #12a3eb;
-	color: #12a3eb;
+	border-color: #363f48;
+	color: #363f48;
 }
 
 .pagination > li > a:active {
@@ -714,7 +744,7 @@ input[type="email"]:focus,
 input[type="search"]:focus,
 input[type="text"]:focus,
 textarea:focus {
-	border-color: #12a3eb;
+	border-color: #363f48;
 	-webkit-box-shadow: 0 3px 6px rgba(0,0,0,.125) inset;
 					box-shadow: 0 3px 6px rgba(0,0,0,.125) inset;
 }
@@ -724,7 +754,7 @@ textarea { resize: vertical; }
 .comment-form {
 	padding-top: 20px;
 	margin-top: 20px;
-	border-top: 2px solid #12a3eb;
+	border-top: 2px solid #363f48;
 }
 
 .input-group {
@@ -749,7 +779,7 @@ textarea { resize: vertical; }
 
 .input-group > .float-label.in {
 	left: 100%;
-	background-color: #12a3eb;
+	background-color: #363f48;
 	color: #ffffff;
 	opacity: 1;
 	-webkit-transform: translateX(-100%);
@@ -761,8 +791,8 @@ textarea { resize: vertical; }
 .btn {
 	padding: 4px 10px;
 	background-color: #ffffff;
-	border: 1px solid #12a3eb;
-	color: #12a3eb;
+	border: 1px solid #363f48;
+	color: #363f48;
 	font-weight: 600;
 	text-decoration: none;
 	-webkit-transition: all .15s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -771,7 +801,7 @@ textarea { resize: vertical; }
 
 .btn:hover,
 .btn:active {
-	background-color: #12a3eb;
+	background-color: #363f48;
 	color: #ffffff;
 }
 
@@ -790,7 +820,7 @@ a.scroll-up {
 	z-index: 5;
 	display: none;
 	padding: 6px 9px;
-	background-color: #12a3eb;
+	background-color: #363f48;
 	color: #ffffff;
 	opacity: .7;
 	cursor: pointer;

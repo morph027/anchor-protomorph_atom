@@ -12,6 +12,8 @@
 
 		<p class="description">
 			<?php echo article_description(); ?>
+			<?php echo preview(article_markdown()); ?>
+			<p><a href="<?php echo article_url(); ?>" rel="article">Read more</a></p>
 		</p>
 
 		<footer>
@@ -36,6 +38,8 @@
 
 		<p class="description">
 			<?php echo article_description(); ?>
+			<?php echo preview(article_markdown()); ?>
+			<p><a href="<?php echo article_url(); ?>" rel="article">Read more</a></p>
 		</p>
 
 		<footer>
