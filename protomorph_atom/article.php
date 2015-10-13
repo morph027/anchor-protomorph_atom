@@ -1,15 +1,25 @@
 <?php theme_include('header'); ?>
 
 	<article class="article" id="article-<?php echo article_id(); ?>">
+
 		<h1>
 			<?php echo article_title(); ?>
 		</h1>
+
+                <?php $featuredimage = article_custom_field('featured-image'); ?>
+                <?php if(!empty($featuredimage)): ?>
+                  <div class="featured-image">
+                    <img src="<?php echo $featuredimage; ?>" alt="<?php echo article_title(); ?>" />
+                  </div>
+                <?php endif; ?>
 
 		<p class="description">
 			<?php echo article_description(); ?>
 		</p>
 
+		<div id="<?php echo article_slug(); ?>">
 		<?php echo article_markdown(); ?>
+		</div>
 
 		<footer>
 			Posted <time datetime="<?php echo date(DATE_W3C, article_time()); ?>"><?php echo date('jS F Y', article_time()); ?></time>
@@ -21,6 +31,7 @@
 			<?php endif; ?>
 			</span>
 			<?php echo article_custom_field('attribution'); ?>
+			<?php if (article_custom_field('tags')) { echo '<br/>Tagged: '; $tagarray = array(); $tagexplode = explode(",", article_custom_field('tags')); foreach ($tagexplode as $taggy) { $tagarray[] = '<a href="'.tagged_url().'/'.$taggy.'">'.$taggy.'</a>'; } echo implode(", ", $tagarray); } ?>
 		</footer>
 	</article>
 

@@ -19,6 +19,7 @@
 		<footer>
 			Posted <time datetime="<?php echo date(DATE_W3C, article_time()); ?>"><?php echo date('jS F Y', article_time()); ?></time>
 			by <?php echo article_author('real_name'); ?>.
+			<?php if (article_custom_field('tags')) { echo '<br/>Tagged: '; $tagarray = array(); $tagexplode = explode(",", article_custom_field('tags')); foreach ($tagexplode as $taggy) { $tagarray[] = '<a href="'.tagged_url().'/'.$taggy.'">'.$taggy.'</a>'; } echo implode(", ", $tagarray); } ?>
 			<span>
 				<a href="<?php echo article_category_url(); ?>"><?php echo article_category(); ?></a>.
 			<?php if(comments_open()): ?>

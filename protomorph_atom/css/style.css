@@ -904,3 +904,11 @@ a.scroll-up:active {
 .browser-icons .browser-opera { background-image: url("img/browser-op.gif"); }
 
 .browser-icons .browser-safari { background-image: url("img/browser-sf.gif"); }
+
+.featured-image {
+  width: 900px;
+  box-shadow: 10px 10px 5px #ccc;
+  -moz-box-shadow: 10px 10px 5px #ccc;
+  -webkit-box-shadow: 10px 10px 5px #ccc;
+  -khtml-box-shadow: 10px 10px 5px #ccc;
+}

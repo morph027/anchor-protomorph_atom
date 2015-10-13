@@ -85,7 +85,14 @@
 		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
 	<![endif]-->
 
-	<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+	<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+
+	<script>
+		$(document).ready(function(){
+			$('div').lovd();
+		});
+	</script>
 
 	<script>var base = '<?php echo theme_url(); ?>';</script>
 
@@ -115,6 +122,7 @@
 			<?php endif; ?>
 
 			<ul class="navlinks" role="menu">
+				<!--
 				<li class="dropdown">
 					<a href="#" data-toggle="dropdown">
 						Categories
@@ -129,6 +137,24 @@
 							</a>
 						</li>
 						<?php endwhile; ?>
+					</ul>
+				</li>
+				-->
+				<li class="dropdown">
+					<a href="#" data-toggle="dropdown">
+						Tags
+						<i class="fa fa-caret-down"></i>
+					</a>
+					<ul class="dropdown-menu" role="menu">
+						<?php
+						// TAGS CLOUD OR LIST
+						$tagresult = tag_cloud();
+						if(isset($tagresult)) {
+							foreach($tagresult as $tagname => $tagcount) {
+								echo '<li><a href="'.tagged_url().'/'.$tagname.'">'.$tagname.' <span>'.$tagcount.'</span></a></li>';
+							}
+						}
+						?>
 					</ul>
 				</li>
 			</ul>
